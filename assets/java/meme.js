@@ -18,3 +18,26 @@ $.ajax({
 }).then(function (response) {
     console.log(response);
 });
+
+var object = [];
+var emotion = [];
+var place = [];
+
+$("#search-button").on("click", function(event) {
+event.preventDefault();
+
+var object = $("#object-input").val().trim();
+
+var emotion = $("#emotion-input").val().trim();
+
+var place = $("#place-input").val().trim();
+
+object.push(object);
+console.log(object);
+
+emotion.push(emotion);
+console.log(emotion);
+
+place.push(place);
+console.log(place);
+});
