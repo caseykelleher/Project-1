@@ -9,35 +9,38 @@ var verb = "happy";
 
 console.log("Im working")
 
-// queryURL for Giphy API
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q= + verb + &limit=25&offset=0&rating=G&lang=en";
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-}).then(function (response) {
-    console.log(response);
-});
-
 var object = [];
 var emotion = [];
 var place = [];
 
 $("#search-button").on("click", function(event) {
 event.preventDefault();
+console.log("click")
+var objectText = $("#object-input").val().trim();
 
-var object = $("#object-input").val().trim();
+var emotionText = $("#emotion-input").val().trim();
 
-var emotion = $("#emotion-input").val().trim();
+var placeText = $("#place-input").val().trim();
 
-var place = $("#place-input").val().trim();
+object.push(objectText);
+console.log(objectText);
 
-object.push(object);
-console.log(object);
+emotion.push(emotionText);
+console.log(emotionText);
 
-emotion.push(emotion);
-console.log(emotion);
+place.push(placeText);
+console.log(placeText);
 
-place.push(place);
-console.log(place);
+// queryURL for Giphy API
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "+" + emotionText + "+" + placeText + "+" + "&limit=25&offset=0&rating=G&lang=en";
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function (response) {
+    console.log(response);
+//add code to render gif to page
+
+});
+
 });
