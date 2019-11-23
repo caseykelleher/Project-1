@@ -39,8 +39,52 @@ $.ajax({
     method: "GET"
 }).then(function (response) {
     console.log(response);
+
+$("#search-button").on("click", function(event) {
+event.preventDefault();
+console.log("click")
+var objectText = $("#object-input").val().trim();
+        
+var emotionText = $("#emotion-input").val().trim();
+        
+var placeText = $("#place-input").val().trim();
+        
+object.push(objectText);
+console.log(objectText);
+        
+emotion.push(emotionText);
+console.log(emotionText);
+        
+place.push(placeText);
+console.log(placeText);
+
+// queryURL for Unsplash API
+var queryURL = "https://source.unsplash.com/random";
+    
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function (response) {
+    console.log(response);
+
 //add code to render gif to page
 
 });
 
+ pausing-gifs-solution
+$(".gif").on("click", function() {
+    //jQuery method to set value on HTML
+    var state = $(this).attr("data-state");
+    
+    if (state === "still"){
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+    });
+
+function buildQueryURL() {
+    //queryURL is the url we'll use to query the API
 });
