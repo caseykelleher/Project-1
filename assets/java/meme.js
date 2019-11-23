@@ -32,12 +32,6 @@ $("#search-button").on("click", function (event) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        //add code to render gif to page
-        // In this case, the "this" keyword refers to the button that was clicked
-        var person = $(this).attr("data-person");
-
-
-        // Storing an array of results in the results variable
         var results = response.data;
 
         // Looping over every result item
@@ -69,6 +63,7 @@ $("#search-button").on("click", function (event) {
                 $("#gifs-appear-here").prepend(gifDiv);
             }
         }
-    });
-});
 
+    });
+
+});
