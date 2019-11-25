@@ -64,7 +64,7 @@ h2 {
  
 
 
-  /* 
+  
   textarea#feedback {
     width: 375px;
     height: 150px;
@@ -72,7 +72,7 @@ h2 {
     margin: 20px 0;
     color: rgba(255,255,255, 0.7);
     
-  } */
+  } 
   
   #search-button {
     width: 100px;
@@ -91,11 +91,11 @@ h2 {
    
   }
   
- /*  input#button:hover {
+  input#button:hover {
     background: rgba(255, 0, 0, 0.1);
     color: #09C;
-  } */
+  } 
 
- /*  textarea:focus, input:focus {
+ textarea:focus, input:focus {
     border: 1px solid #09C;
-  } */
+  } 

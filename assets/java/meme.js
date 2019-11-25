@@ -48,8 +48,8 @@ $("#search-button").on("click", function (event) {
                 // Storing the result item's rating
                 var rating = results[i].rating;
 
-                // Creating a paragraph tag with the result item's rating
-                //var p = $("<p>").text("Rating: " + rating);
+                //Creating a paragraph tag with the result item's rating
+                var p = $("<p>").text("Rating: " + rating);
 
                 // Creating an image tag
                 var personImage = $("<img>");
