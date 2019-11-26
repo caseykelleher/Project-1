@@ -100,6 +100,6 @@ h2 {
     border: 1px solid #09C;
   } 
 
-  placeholder{
-    opacity: 30%;
-  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  opacity 0.5;
+} 
