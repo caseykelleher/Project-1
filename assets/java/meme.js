@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> bbd269d922464889d54ef9bda4fc17709427bb5a
 var verb = "happy";
 
 console.log("Im working")
@@ -9,11 +15,11 @@ var place = [];
 $("#search-button").on("click", function (event) {
     event.preventDefault();
     console.log("click")
-    var objectText = $("#object-input").val().trim();
+    var objectText = $(".object-input").val().trim();
 
-    var emotionText = $("#emotion-input").val().trim();
+    var emotionText = $(".emotion-input").val().trim();
 
-    var placeText = $("#place-input").val().trim();
+    var placeText = $(".place-input").val().trim();
 
     object.push(objectText);
     console.log(objectText);
@@ -45,7 +51,7 @@ $("#search-button").on("click", function (event) {
                 // Storing the result item's rating
                 var rating = results[i].rating;
 
-                // Creating a paragraph tag with the result item's rating
+                //Creating a paragraph tag with the result item's rating
                 var p = $("<p>").text("Rating: " + rating);
 
                 // Creating an image tag
