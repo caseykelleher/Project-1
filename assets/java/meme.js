@@ -1,7 +1,3 @@
-//javascript, jQuery - sample code from Giphy API site
-// 2
-// 3var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3");
-// 4xhr.done(function(data) { console.log("success got data", data); });
 
 
 
@@ -16,11 +12,11 @@ var place = [];
 $("#search-button").on("click", function (event) {
     event.preventDefault();
     console.log("click")
-    var objectText = $("#object-input").val().trim();
+    var objectText = $(".object-input").val().trim();
 
-    var emotionText = $("#emotion-input").val().trim();
+    var emotionText = $(".emotion-input").val().trim();
 
-    var placeText = $("#place-input").val().trim();
+    var placeText = $(".place-input").val().trim();
 
     object.push(objectText);
     console.log(objectText);
@@ -52,7 +48,7 @@ $("#search-button").on("click", function (event) {
                 // Storing the result item's rating
                 var rating = results[i].rating;
 
-                // Creating a paragraph tag with the result item's rating
+                //Creating a paragraph tag with the result item's rating
                 var p = $("<p>").text("Rating: " + rating);
 
                 // Creating an image tag
