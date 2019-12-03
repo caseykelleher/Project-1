@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> bbd269d922464889d54ef9bda4fc17709427bb5a
 var verb = "happy";
 
 console.log("Im working")
@@ -13,6 +7,8 @@ var emotion = [];
 var place = [];
 
 $("#search-button").on("click", function (event) {
+    // function showGifs() {
+        // location.href='page2.html';   
     event.preventDefault();
     console.log("click")
     var objectText = $(".object-input").val().trim();
@@ -47,6 +43,7 @@ $("#search-button").on("click", function (event) {
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                 // Creating a div for the gif
                 var gifDiv = $("<div>");
+                gifDiv.attr("class", "col-sm-3")
 
                 // Storing the result item's rating
                 var rating = results[i].rating;

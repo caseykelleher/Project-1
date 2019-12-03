@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Libs</title>
+    <link rel="stylesheet" href="../Project-1/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lusitana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+
+
+<body>
+    <h1>Enter your Location</h1>
+
+    <form method="get" action="https://images.google.com/">
+
+
+        <div style="border:1px solid black;padding:4px;width:20em;">
+            <table border="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <input type="text" name="q" size="25" maxlength="255" value="" />
+                        <input type="submit" value="Google Search" /></td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-size:75%">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+        // This .on("click") function will trigger the AJAX Call
+        $("#find-movie").on("click", function (event) {
+
+            // event.preventDefault() can be used to prevent an event's default behavior.
+            // Here, it prevents the submit button from trying to submit a form when clicked
+            event.preventDefault();
+
+            // Here we grab the text from the input box
+            var location = $("#submit").val();
+
+            // Here we construct our URL
+            var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+                ? location = -33.8670522,151.1957362
+                    & radius=500
+                        & types=food
+                            & name=harbour
+                                & key=AIzaSyAkccTvRwGXkLGLKGOtlQJMZMV7mI0N3CA;
+
+                $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                $("submit").text(JSON.stringify(response));
+            });
+
+        });
+        // <!-- https://maps.googleapis.com/maps/api/place/nearbysearch/json
+        //     ?location=-33.8670522,151.1957362
+        //     &radius=500
+        //     &types=food
+        //     &name=harbour
+        //     &key=AIzaSyAkccTvRwGXkLGLKGOtlQJMZMV7mI0N3CA -->
+        <script src="../Project-1/assets/java/meme.js"></script>
+</body>
+
+</html>
