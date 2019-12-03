@@ -1,105 +1,38 @@
-.bkgrd {
-  background-image: url("https://images.unsplash.com/photo-1546448396-6aef80193ceb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");
-  background-attachment:fixed;
-  background-repeat:no-repeat;
-  background-size:cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
+#SLIDE_BG {
+  width: 100%;
+  height: 100vh;
   background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  animation: slideBg 36s linear infinite 8s;
+  animation-timing-function: ease-in-out;
+  background-image: url("assets/images/laughing-bearded-man-holding-hair-and-laughing-3DLGZ7V.jpg");
 
 }
 
-
-
-h2 {
-    text-align: center;
+@keyframes slideBg {
+  0% {
+      background-image: url("assets/images/laughing-bearded-man-holding-hair-and-laughing-3DLGZ7V.jpg");
+  }
+  25% {
+      background-image: url("assets/images/laughing-afro-man-in-sunlight-QLEFV3C.jpg");
+  }
+  50% {
+      background-image: url("assets/images/laughing-friends-sitting-on-a-boat-having-drinks-RLZTLFW.jpg");
+  }
+  75% {
+      background-image: url("assets/images/happy-boy-in-autumn-forest-RB5HWXS.jpg");
+  }
+  100% {
+      background-image: url("assets/images/laughing-businesswoman-wearing-telephone-headset-QZRU9UA.jpg");
   }
 
-  h2 {
+}
 
-    font-weight: lighter;
-    font-size: 35px;
-    letter-spacing: 4px;
-    color: rgba(235, 231, 231, 0.9);
-  }
+.card {
+  font-family: 'Calistoga', cursive;
+  font-size: 20px;
+  color:orangered;
+  text-align: center;
   
-  form {
-    /* background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
-    background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
-    background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px); */
-
-    background: rgba(255, 0, 0, 0.1);
-    margin: auto;
-    position: relative;
-    width: 550px;
-    height: 450px;
-    font-family: 'Lusitana', serif;
-    font-weight: 0;
-    letter-spacing: 2px;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255,255,255, 0.7);
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 10px;
-    border: rgba(0, 0, 0, 0);
-    border: inset 1px solid #333;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0);
-    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0);
-  }
-
-
-  
-  input {
-    width: 375px;
-    display: block;
-    height: 25px;
-    margin: 20px 0;
-    align-content: center;
-  
-  }
-
- 
-
-
-  
-  textarea#feedback {
-    width: 375px;
-    height: 150px;
-    display: block;
-    margin: 20px 0;
-    color: rgba(255,255,255, 0.7);
-    
-  } 
-  
-  #search-button {
-    width: 100px;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    color: rgba(255, 0, 0, 0.5);
-    font-family: 'Lusitana', serif;
-    letter-spacing: 1px;
-    height: 40px;
-    opacity: .8;
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    background-color: rgba(0, 0, 0, 0);
-    padding: 14px 28px;
-    cursor: pointer;
-   
-  }
-  
-  input#button:hover {
-    background: rgba(255, 0, 0, 0.1);
-    color: #09C;
-  } 
-
- textarea:focus, input:focus {
-    border: 1px solid #09C;
-  } 
-
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  opacity: 0.5;
-} 
