@@ -1,3 +1,24 @@
+function findLocation () {
+    $.ajax('http://ip-api.com/json')
+    .then(
+        function success(response) {
+            console.log("city", response.city)
+            currentLocation = response.city + " "+ response.zip;
+            $(".currentLocation").empty();
+            $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
+          //  cardData(currentLocation);
+  },
+        function fail(data, status) {
+            console.log('Request failed.  Returned status of',
+                        status);
+            currentLocation = "Canada";
+            $(".current-location").text("We couldn't find your current city.");
+            cardData(currentLocation);
+        }
+    );
+  }
+
+
 var verb = "happy";
 
 console.log("Im working")
@@ -7,27 +28,25 @@ var emotion = [];
 var place = [];
 
 $("#button-addon2").on("click", function (event) {
-    // function showGifs() {
-        // location.href='page2.html';   
     event.preventDefault();
     console.log("click")
-    var objectText = $(".object-input").val().trim();
+    var objectText = $(".form-control").val().trim();
 
-    // var emotionText = $(".emotion-input").val().trim();
+    //var emotionText = $(".emotion-input").val().trim();
 
-    // var placeText = $(".place-input").val().trim();
+    //var placeText = $(".place-input").val().trim();
 
     object.push(objectText);
     console.log(objectText);
 
-    // emotion.push(emotionText);
-    // console.log(emotionText);
+    //emotion.push(emotionText);
+    //console.log(emotionText);
 
-    // place.push(placeText);
-    // console.log(placeText);
+    //place.push(placeText);
+    //console.log(placeText);
 
     // queryURL for Giphy API
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "+" + emotionText + "+" + placeText + "+" + "&limit=25&offset=0&rating=G&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "&limit=4&offset=0&rating=G&lang=en";
 
     $.ajax({
         url: queryURL,
@@ -43,13 +62,13 @@ $("#button-addon2").on("click", function (event) {
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                 // Creating a div for the gif
                 var gifDiv = $("<div>");
-                gifDiv.attr("class", "col-sm-3")
+                gifDiv.addClass("ml-md-3")
 
                 // Storing the result item's rating
                 var rating = results[i].rating;
 
                 //Creating a paragraph tag with the result item's rating
-                var p = $("<p>").text("Rating: " + rating);
+                //var p = $("<p>").text("Rating: " + rating);
 
                 // Creating an image tag
                 var personImage = $("<img>");
@@ -59,7 +78,7 @@ $("#button-addon2").on("click", function (event) {
                 personImage.attr("src", results[i].images.fixed_height.url);
 
                 // Appending the paragraph and personImage we created to the "gifDiv" div we created
-                gifDiv.append(p);
+                //gifDiv.append(p);
                 gifDiv.append(personImage);
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
@@ -70,3 +89,23 @@ $("#button-addon2").on("click", function (event) {
     });
 
 });
+
+function findLocation () {
+    $.ajax('http://ip-api.com/json')
+    .then(
+        function success(response) {
+            console.log("city", response.city)
+            currentLocation = response.city + " "+ response.zip;
+            $(".currentLocation").empty();
+            $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
+          //  cardData(currentLocation);
+  },
+        function fail(data, status) {
+            console.log('Request failed.  Returned status of',
+                        status);
+            currentLocation = "Canada";
+            $(".current-location").text("We couldn't find your current city.");
+            cardData(currentLocation);
+        }
+    );
+  }
