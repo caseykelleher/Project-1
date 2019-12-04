@@ -6,25 +6,25 @@ var object = [];
 var emotion = [];
 var place = [];
 
-$("#search-button").on("click", function (event) {
+$("#button-addon2").on("click", function (event) {
     // function showGifs() {
         // location.href='page2.html';   
     event.preventDefault();
     console.log("click")
     var objectText = $(".object-input").val().trim();
 
-    var emotionText = $(".emotion-input").val().trim();
+    // var emotionText = $(".emotion-input").val().trim();
 
-    var placeText = $(".place-input").val().trim();
+    // var placeText = $(".place-input").val().trim();
 
     object.push(objectText);
     console.log(objectText);
 
-    emotion.push(emotionText);
-    console.log(emotionText);
+    // emotion.push(emotionText);
+    // console.log(emotionText);
 
-    place.push(placeText);
-    console.log(placeText);
+    // place.push(placeText);
+    // console.log(placeText);
 
     // queryURL for Giphy API
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "+" + emotionText + "+" + placeText + "+" + "&limit=25&offset=0&rating=G&lang=en";
