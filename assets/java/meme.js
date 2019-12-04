@@ -1,9 +1,20 @@
+
+
+
+var verb = "happy";
+
+console.log("Im working")
+
+var object = [];
+var emotion = [];
+var place = [];
+
 function findLocation () {
     $.ajax('http://ip-api.com/json')
     .then(
         function success(response) {
             console.log("city", response.city)
-            currentLocation = response.city + " "+ response.zip;
+            currentLocation = "Greetings " + response.city + ", " + "hope you enjoy your stay!";
             $(".currentLocation").empty();
             $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
           //  cardData(currentLocation);
@@ -17,15 +28,7 @@ function findLocation () {
         }
     );
   }
-
-
-var verb = "happy";
-
-console.log("Im working")
-
-var object = [];
-var emotion = [];
-var place = [];
+  
 
 $("#button-addon2").on("click", function (event) {
     event.preventDefault();
@@ -46,7 +49,7 @@ $("#button-addon2").on("click", function (event) {
     //console.log(placeText);
 
     // queryURL for Giphy API
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "&limit=4&offset=0&rating=G&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "&limit=5&offset=0&rating=G&lang=en";
 
     $.ajax({
         url: queryURL,
@@ -85,27 +88,8 @@ $("#button-addon2").on("click", function (event) {
                 $("#gifs-appear-here").prepend(gifDiv);
             }
         }
-
+        findLocation();
     });
 
 });
 
-function findLocation () {
-    $.ajax('http://ip-api.com/json')
-    .then(
-        function success(response) {
-            console.log("city", response.city)
-            currentLocation = response.city + " "+ response.zip;
-            $(".currentLocation").empty();
-            $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
-          //  cardData(currentLocation);
-  },
-        function fail(data, status) {
-            console.log('Request failed.  Returned status of',
-                        status);
-            currentLocation = "Canada";
-            $(".current-location").text("We couldn't find your current city.");
-            cardData(currentLocation);
-        }
-    );
-  }
