@@ -1,24 +1,3 @@
-function findLocation () {
-    $.ajax('http://ip-api.com/json')
-    .then(
-        function success(response) {
-            console.log("city", response.city)
-            currentLocation = response.city + " "+ response.zip;
-            $(".currentLocation").empty();
-            $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
-          //  cardData(currentLocation);
-  },
-        function fail(data, status) {
-            console.log('Request failed.  Returned status of',
-                        status);
-            currentLocation = "Canada";
-            $(".current-location").text("We couldn't find your current city.");
-            cardData(currentLocation);
-        }
-    );
-  }
-
-
 var verb = "happy";
 
 console.log("Im working")
@@ -26,6 +5,32 @@ console.log("Im working")
 var object = [];
 var emotion = [];
 var place = [];
+
+function findLocation() {
+    $.ajax('http://ip-api.com/json')
+        .then(
+            function success(response) {
+                console.log("city", response.city)
+                currentLocation = response.city + " " + response.zip;
+                $(".currentLocation").empty();
+                $(".currentLocation").append("<h1>" + currentLocation + "<hr>");
+                //  cardData(currentLocation);
+            },
+            function fail(data, status) {
+                console.log('Request failed.  Returned status of',
+                    status);
+                currentLocation = "Canada";
+                $(".current-location").text("We couldn't find your current city.");
+                cardData(currentLocation);
+            }
+        );
+}
+
+$("#button-addon3").on("click", function (event) {
+    $(".form-control").val("")
+    $("#gifs-appear-here").text("")
+})
+
 
 $("#button-addon2").on("click", function (event) {
     event.preventDefault();
@@ -83,6 +88,7 @@ $("#button-addon2").on("click", function (event) {
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 $("#gifs-appear-here").prepend(gifDiv);
+                
             }
         }
 
@@ -90,22 +96,22 @@ $("#button-addon2").on("click", function (event) {
 
 });
 
-function findLocation () {
-    $.ajax('http://ip-api.com/json')
-    .then(
-        function success(response) {
-            console.log("city", response.city)
-            currentLocation = response.city + " "+ response.zip;
-            $(".currentLocation").empty();
-            $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
-          //  cardData(currentLocation);
-  },
-        function fail(data, status) {
-            console.log('Request failed.  Returned status of',
-                        status);
-            currentLocation = "Canada";
-            $(".current-location").text("We couldn't find your current city.");
-            cardData(currentLocation);
-        }
-    );
-  }
+// function findLocation() {
+//     $.ajax('http://ip-api.com/json')
+//         .then(
+//             function success(response) {
+//                 console.log("city", response.city)
+//                 currentLocation = response.city + " " + response.zip;
+//                 $(".currentLocation").empty();
+//                 $(".currentLocation").append("<h1>" + currentLocation + "<hr>");
+//                 //  cardData(currentLocation);
+//             },
+//             function fail(data, status) {
+//                 console.log('Request failed.  Returned status of',
+//                     status);
+//                 currentLocation = "Canada";
+//                 $(".current-location").text("We couldn't find your current city.");
+//                 cardData(currentLocation);
+//             }
+//         );
+// }
