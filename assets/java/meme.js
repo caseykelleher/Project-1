@@ -98,7 +98,7 @@ $("#button-addon2").on("click", function (event) {
 
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> de497f2312d7d14271a5acf36ccf4002d921184a
+
+
+
