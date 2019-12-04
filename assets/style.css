@@ -35,7 +35,13 @@
   font-size: 20px;
   color:orangered;
   text-align: center;
+<<<<<<< HEAD
+}
+#button-addon3{
+  margin-left: 40px;
+=======
   
 .currentLocation{
   font-family: 'Calistoga', cursive;
+>>>>>>> de497f2312d7d14271a5acf36ccf4002d921184a
 }

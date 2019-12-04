@@ -1,6 +1,3 @@
-
-
-
 var verb = "happy";
 
 console.log("Im working")
@@ -29,6 +26,13 @@ function findLocation () {
     );
   }
   
+
+
+$("#button-addon3").on("click", function (event) {
+    $(".form-control").val("")
+    $("#gifs-appear-here").text("")
+})
+
 
 $("#button-addon2").on("click", function (event) {
     event.preventDefault();
@@ -86,6 +90,7 @@ $("#button-addon2").on("click", function (event) {
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 $("#gifs-appear-here").prepend(gifDiv);
+                
             }
         }
         findLocation();
@@ -93,3 +98,7 @@ $("#button-addon2").on("click", function (event) {
 
 });
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> de497f2312d7d14271a5acf36ccf4002d921184a
