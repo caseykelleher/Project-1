@@ -11,7 +11,7 @@ function findLocation() {
         .then(
             function success(response) {
                 console.log("city", response.city)
-                currentLocation = "How's it hanging over there in  " + response.city + ", " + "don't leave now we know where you live!";
+                currentLocation = "Thanks for visiting our page from  " + response.city + ", " + "have an amazing day!";
                 $(".currentLocation").empty();
                 $(".currentLocation").append("<h1>" + currentLocation + "<hr>");
                 //  cardData(currentLocation);
