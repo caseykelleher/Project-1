@@ -6,26 +6,26 @@ var object = [];
 var emotion = [];
 var place = [];
 
-function findLocation () {
+function findLocation() {
     $.ajax('http://ip-api.com/json')
-    .then(
-        function success(response) {
-            console.log("city", response.city)
-            currentLocation = "Greetings " + response.city + ", " + "hope you enjoy your stay!";
-            $(".currentLocation").empty();
-            $(".currentLocation").append("<h1>"+currentLocation+"<hr>");
-          //  cardData(currentLocation);
-  },
-        function fail(data, status) {
-            console.log('Request failed.  Returned status of',
-                        status);
-            currentLocation = "Canada";
-            $(".current-location").text("We couldn't find your current city.");
-            cardData(currentLocation);
-        }
-    );
-  }
-  
+        .then(
+            function success(response) {
+                console.log("city", response.city)
+                currentLocation = "How's it hanging over there in  " + response.city + ", " + "don't leave now we know where you live!";
+                $(".currentLocation").empty();
+                $(".currentLocation").append("<h1>" + currentLocation + "<hr>");
+                //  cardData(currentLocation);
+            },
+            function fail(data, status) {
+                console.log('Request failed.  Returned status of',
+                    status);
+                currentLocation = "Canada";
+                $(".current-location").text("We couldn't find your current city.");
+                cardData(currentLocation);
+            }
+        );
+}
+
 
 
 $("#button-addon3").on("click", function (event) {
@@ -53,7 +53,7 @@ $("#button-addon2").on("click", function (event) {
     //console.log(placeText);
 
     // queryURL for Giphy API
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "&limit=5&offset=0&rating=G&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9tPmQXukCEVIORN4YM6PUQloQ0OiWlC3&q=" + objectText + "&limit=25&offset=0&rating=G&lang=en";
 
     $.ajax({
         url: queryURL,
@@ -90,11 +90,10 @@ $("#button-addon2").on("click", function (event) {
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 $("#gifs-appear-here").prepend(gifDiv);
-                
+
             }
         }
         findLocation();
     });
 
 });
-
